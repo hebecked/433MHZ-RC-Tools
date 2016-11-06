@@ -1,4 +1,9 @@
-##gcc -Wall -pedantic -O2 -o record record.c -std=gnu99 -lwiringPi
+// Small code snipped to play recorded control signals for 433 MHz (and other) Modules
+// Code written by Dustin Hebecker (https://github.com/hebecked)
+// The Software is provided "as is," with all faults, defects and errors, and without warranty of any kind.
+// Feel free to share and modify as long as the original author is given credit.
+// To compile run:
+//gcc -Wall -pedantic -O2 -o record record.c -std=gnu99 -lwiringPi
 
 #include <unistd.h>
 #include <stdio.h>
