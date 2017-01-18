@@ -1,0 +1,23 @@
+Hardware:
+
+Connect raw to +12v
+connect ground to -
+connect pwms to left control ports
+connect reciever module
+
+
+code:
+
+use eeprom lib to store colour settings
+at bootup read eeprom
+set colour
+at set new colour write eeprom
+continously check for signals
+if matching signal set colour or switch on/off
+
+Get communication protocol !!! (use lib with crc)
+add higher level protocol (including flag(udp / ack / err / data ),addr1 (7bit), addr2(7bit) ,DATA )
+if udp (00)-> addr1+2 + data
+else if ack (10)-> addr1+2
+else if err (01)-> addr1+0 => (resend do not decrease counter)
+else addr1+2 + data (11)=> (send ack (store ack or data or none?))
